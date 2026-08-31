@@ -1,0 +1,63 @@
+---
+import { certifications } from "../data/expertise";
+import { education, timeline } from "../data/timeline";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section section--timeline" id="experience" aria-labelledby="timeline-title">
+  <div class="shell">
+    <SectionHeader number="05" title="Experience" />
+    <div class="section-lead">
+      <h2 id="timeline-title" class="experience-heading">Professional experience</h2>
+      <p class="section-intro">
+        One consistent thread: making data systems easier to understand, deploy, and operate.
+      </p>
+    </div>
+    <ol class="timeline">
+      {
+        timeline.map((entry) => (
+          <li>
+            <time>{entry.period}</time>
+            <div>
+              <h3>{entry.mission}</h3>
+              <p>{entry.role}</p>
+            </div>
+            <span>
+              <small>{entry.organizationLabel ?? "Consulting firm"}</small>
+              {entry.organization}
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="credentials-grid">
+      <section aria-labelledby="education-title">
+        <p class="section-kicker">EDUCATION</p>
+        <h3 id="education-title">Academic background</h3>
+        <ol class="education-list">
+          {
+            education.map((entry) => (
+              <li>
+                <time>{entry.period}</time>
+                <div>
+                  <strong>{entry.institution}</strong>
+                  <p>{entry.program}</p>
+                  <span>{entry.location}</span>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section aria-labelledby="credentials-title">
+        <p class="section-kicker">CERTIFICATIONS</p>
+        <h3 id="credentials-title">Certified across the platform stack</h3>
+        <ul class="credentials-list">
+          {certifications.map((certification) => <li>{certification}</li>)}
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>

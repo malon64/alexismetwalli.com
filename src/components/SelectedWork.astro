@@ -1,0 +1,20 @@
+---
+import { selectedWork } from "../data/work";
+import CaseStudyCard from "./CaseStudyCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section shell" id="references" aria-labelledby="references-title">
+  <SectionHeader number="04" title="Selected work" />
+  <div class="section-lead">
+    <h2 id="references-title" class="references-heading">
+      Platforms taken over, <em>modernized, and made reliable.</em>
+    </h2>
+    <p class="section-intro">
+      A few selected engagements, focused on problems solved rather than a wall of logos.
+    </p>
+  </div>
+  <div class="case-studies">
+    {selectedWork.map((study, index) => <CaseStudyCard study={study} index={index} />)}
+  </div>
+</section>

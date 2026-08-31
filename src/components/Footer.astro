@@ -1,0 +1,25 @@
+---
+import { profile, socialLinks } from "../data/profile";
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div>
+      <p>{profile.name}</p>
+      <span>{profile.title}</span>
+    </div>
+    <nav aria-label="Social links">
+      {
+        socialLinks.map((link) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="site-footer__meta">
+      <span>© {new Date().getFullYear()} Alexis Metwalli</span>
+      <span>Built with Astro.</span>
+    </div>
+  </div>
+</footer>

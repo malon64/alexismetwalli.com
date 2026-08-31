@@ -1,0 +1,38 @@
+---
+import { contributions, projects } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section section--dark" id="open-source" aria-labelledby="open-source-title">
+  <div class="shell">
+    <SectionHeader number="03" title="Open Source" inverted />
+    <div class="section-lead section-lead--inverted">
+      <h2 id="open-source-title" class="open-source-heading">
+        Building a better <em>engineering environment.</em>
+      </h2>
+      <p class="section-intro">
+        My platform-engineering ideas made tangible: a mature ecosystem for delivery, deployment,
+        ingestion, and reliability.
+      </p>
+    </div>
+    <div class="projects-grid">
+      {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+    </div>
+    <div class="contributions">
+      <span>CONTRIBUTIONS</span>
+      <ul>
+        {
+          contributions.map((contribution) => (
+            <li>
+              <a href={contribution.href} target="_blank" rel="noopener noreferrer">
+                {contribution.name} <span aria-hidden="true">↗</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

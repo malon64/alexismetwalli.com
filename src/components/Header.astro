@@ -1,0 +1,33 @@
+---
+import { navLinks, profile } from "../data/profile";
+---
+
+<header class="site-header">
+  <div class="site-header__inner shell">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand__mark" aria-hidden="true">AM</span>
+      <span>{profile.name}</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation">
+        <span>Menu</span>
+        <span class="mobile-nav__icon" aria-hidden="true"></span>
+      </summary>
+      <nav aria-label="Mobile navigation">
+        {
+          navLinks.map((link, index) => (
+            <a href={link.href}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  intro?: string;
+  inverted?: boolean;
+}
+
+const { number, title, intro, inverted = false } = Astro.props;
+---
+
+<header class:list={["section-header", { "section-header--inverted": inverted }]}>
+  <p class="section-kicker">{number} / {title.toUpperCase()}</p>
+  {intro && <p class="section-intro">{intro}</p>}
+</header>

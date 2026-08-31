@@ -1,0 +1,52 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero__eyebrow">
+    <span>Paris · Remote</span>
+    <span class="availability-dot" aria-hidden="true"></span>
+    <span>Data · Platform · Cloud</span>
+  </div>
+
+  <div class="hero__layout">
+    <div class="hero__copy">
+      <h1 id="hero-title">{profile.name}</h1>
+      <p class="hero__role">{profile.title}</p>
+      <p class="hero__intro">{profile.intro}</p>
+      <p class="hero__passion">
+        I’m passionate about building mature, efficient ecosystems where data engineers can focus on
+        delivering value—not rebuilding the same foundations.
+      </p>
+      <ul class="hero__stack" aria-label="Core technologies">
+        {profile.technologies.map((technology) => <li>{technology}</li>)}
+      </ul>
+      <div class="button-row">
+        <a class="button button--primary" href="#contact">
+          Discuss your data platform <span>↗</span>
+        </a>
+        <a class="button button--secondary" href="#open-source">View my projects <span>↓</span></a>
+      </div>
+    </div>
+
+    <figure class="hero__portrait">
+      <img
+        src="/alexis-metwalli.jpg"
+        alt="Portrait of Alexis Metwalli"
+        width="800"
+        height="800"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <figcaption>
+        <span>Paris, France</span>
+        <span>Work in hybrid / remote</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label="Go to the About section">
+    <span>Scroll to explore</span>
+    <span aria-hidden="true">↓</span>
+  </a>
+</section>

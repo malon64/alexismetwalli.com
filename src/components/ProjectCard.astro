@@ -1,0 +1,30 @@
+---
+import type { Project } from "../data/types";
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-card__topline">
+    <span>0{index + 1} / {project.label}</span>
+    <span aria-hidden="true">↗</span>
+  </div>
+  <h3>{project.name}</h3>
+  <p class="project-card__description">{project.description}</p>
+  <ul class="project-card__highlights">
+    {project.highlights.map((highlight) => <li>{highlight}</li>)}
+  </ul>
+  <p class="project-card__command"><span>$</span> {project.command}</p>
+  <ul class="project-card__stack" aria-label={project.name + " technologies"}>
+    {project.stack.map((item) => <li>{item}</li>)}
+  </ul>
+  <a href={project.github} target="_blank" rel="noopener noreferrer">
+    View on GitHub <span aria-hidden="true">→</span>
+    <span class="sr-only"> (opens in a new tab)</span>
+  </a>
+</article>

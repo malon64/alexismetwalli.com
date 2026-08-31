@@ -1,0 +1,39 @@
+---
+import type { CaseStudy } from "../data/types";
+
+interface Props {
+  study: CaseStudy;
+  index: number;
+}
+
+const { study, index } = Astro.props;
+---
+
+<article class="case-study">
+  <header class="case-study__header">
+    <span>{String(index + 1).padStart(2, "0")}</span>
+    <p>{study.context}</p>
+  </header>
+  <div class="case-study__body">
+    <div class="case-study__lead">
+      <h3>{study.client}</h3>
+      <p>{study.summary}</p>
+    </div>
+    <ul class="case-study__details">
+      {study.details.map((detail) => <li>{detail}</li>)}
+    </ul>
+  </div>
+  <dl class="case-study__proofs">
+    {
+      study.proofs.map((proof) => (
+        <div class:list={{ "case-proof--featured": proof.featured }}>
+          <dt>{proof.value}</dt>
+          <dd>{proof.label}</dd>
+        </div>
+      ))
+    }
+  </dl>
+  <ul class="case-study__stack" aria-label={"Technologies used for " + study.client}>
+    {study.stack.map((item) => <li>{item}</li>)}
+  </ul>
+</article>

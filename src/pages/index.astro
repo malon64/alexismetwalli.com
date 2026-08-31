@@ -1,0 +1,26 @@
+---
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Expertise from "../components/Expertise.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import OpenSource from "../components/OpenSource.astro";
+import SelectedWork from "../components/SelectedWork.astro";
+import Timeline from "../components/Timeline.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <Expertise />
+    <OpenSource />
+    <SelectedWork />
+    <Timeline />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

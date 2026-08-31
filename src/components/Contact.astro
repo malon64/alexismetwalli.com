@@ -1,0 +1,36 @@
+---
+import { profile, socialLinks } from "../data/profile";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section section--contact" id="contact" aria-labelledby="contact-title">
+  <div class="shell">
+    <SectionHeader number="06" title="Contact" />
+    <div class="contact-layout">
+      <div>
+        <p class="contact-pretitle">
+          A data project, a migration, or a need for extra engineering capacity?
+        </p>
+        <h2 id="contact-title">Let’s <em>talk.</em></h2>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-email" href={"mailto:" + profile.contactEmail}>
+          {profile.contactEmail}<span aria-hidden="true">↗</span>
+        </a>
+        <ul>
+          {
+            socialLinks.map((link) => (
+              <li>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                  <span aria-hidden="true">↗</span>
+                  <span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

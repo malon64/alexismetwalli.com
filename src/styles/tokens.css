@@ -1,0 +1,24 @@
+:root {
+  --color-bg: #f1eee5;
+  --color-surface: #f8f5ed;
+  --color-ink: #171915;
+  --color-muted: #66685f;
+  --color-border: #b9b7ad;
+  --color-border-dark: #454740;
+  --color-accent: #d85b36;
+  --color-dark: #1d1f1b;
+  --color-dark-muted: #aaaca3;
+  --font-sans: "Manrope Variable", "Helvetica Neue", sans-serif;
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --shell: min(1280px, calc(100vw - 64px));
+  --section-space: clamp(6rem, 11vw, 10.5rem);
+  --radius: 2px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --shell: calc(100vw - 36px);
+    --section-space: 5.5rem;
+  }
+}

@@ -1,0 +1,58 @@
+---
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/newsreader";
+import "@fontsource/ibm-plex-mono/400.css";
+import "../styles/global.css";
+import { profile, socialLinks } from "../data/profile";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Alexis Metwalli — Data Platform Engineer", description = profile.description } =
+  Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/og.png", Astro.site);
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  url: Astro.site?.toString(),
+  jobTitle: "Data Platform Engineer",
+  sameAs: socialLinks.map(({ href }) => href),
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f1eee5" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:alt" content="Alexis Metwalli — Data Platform Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <title>{title}</title>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

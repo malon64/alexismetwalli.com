@@ -1,0 +1,59 @@
+---
+import { Database, GitBranch, MessagesSquare, ServerCog } from "@lucide/astro";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section shell" id="about" aria-labelledby="about-title">
+  <SectionHeader number="01" title="About" />
+  <div class="about-grid">
+    <h2 id="about-title">
+      From the business question to the <em>running platform.</em>
+    </h2>
+    <div class="about-copy">
+      <p>
+        My strength is versatility across the delivery chain. I can understand the client’s need,
+        turn it into the right data model, implement the transformations, and provision the compute
+        and storage needed to run it reliably.
+      </p>
+      <p>
+        This end-to-end view lets me make technical decisions with both the business outcome and the
+        operating reality in mind.
+      </p>
+    </div>
+  </div>
+
+  <ol class="delivery-chain" aria-label="End-to-end delivery capabilities">
+    <li>
+      <div class="delivery-chain__topline">
+        <span>01</span>
+        <MessagesSquare aria-hidden="true" />
+      </div>
+      <strong>Understand</strong>
+      <p>Clarify the client need and the decision the data must support.</p>
+    </li>
+    <li>
+      <div class="delivery-chain__topline">
+        <span>02</span>
+        <Database aria-hidden="true" />
+      </div>
+      <strong>Model</strong>
+      <p>Design data models and contracts that reflect the business.</p>
+    </li>
+    <li>
+      <div class="delivery-chain__topline">
+        <span>03</span>
+        <GitBranch aria-hidden="true" />
+      </div>
+      <strong>Transform</strong>
+      <p>Implement tested, maintainable pipelines and transformations.</p>
+    </li>
+    <li>
+      <div class="delivery-chain__topline">
+        <span>04</span>
+        <ServerCog aria-hidden="true" />
+      </div>
+      <strong>Operate</strong>
+      <p>Provision compute, storage, deployment, and observability.</p>
+    </li>
+  </ol>
+</section>
