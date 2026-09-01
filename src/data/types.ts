@@ -45,6 +45,7 @@ export interface TimelineEntry {
   organizationLabel?: string;
   role: string;
   mission: string;
+  summary: string;
 }
 
 export interface EducationEntry {

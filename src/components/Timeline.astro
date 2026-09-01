@@ -4,9 +4,9 @@ import { education, timeline } from "../data/timeline";
 import SectionHeader from "./SectionHeader.astro";
 ---
 
-<section class="section section--timeline" id="experience" aria-labelledby="timeline-title">
+<section class="section section--timeline" aria-labelledby="timeline-title">
   <div class="shell">
-    <SectionHeader number="05" title="Experience" />
+    <SectionHeader id="experience" number="05" title="Experience" />
     <div class="section-lead">
       <h2 id="timeline-title" class="experience-heading">Professional experience</h2>
       <p class="section-intro">
@@ -22,6 +22,7 @@ import SectionHeader from "./SectionHeader.astro";
               <h3>{entry.mission}</h3>
               <p>{entry.role}</p>
             </div>
+            <p class="timeline__summary">{entry.summary}</p>
             <span>
               <small>{entry.organizationLabel ?? "Consulting firm"}</small>
               {entry.organization}
