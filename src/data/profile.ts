@@ -6,7 +6,7 @@ export const profile = {
   description:
     "Data Platform Engineer in Paris. Databricks, Apache Spark, AWS, Azure, Terraform, and lakehouse architectures.",
   location: "Paris · Remote",
-  contactEmail: "alexis.metwalli@gmail.com",
+  contactEmail: "contact@alexismetwalli.com",
   intro:
     "I help data teams assess, modernize, and industrialize their data platforms—from business requirements to production infrastructure.",
   technologies: ["Databricks", "Apache Spark", "dbt", "AWS / Azure", "Terraform"],
