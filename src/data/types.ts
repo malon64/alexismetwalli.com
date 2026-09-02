@@ -48,6 +48,14 @@ export interface TimelineEntry {
   summary: string;
 }
 
+export interface Recommendation {
+  name: string;
+  role: string;
+  profileUrl: string;
+  date: string;
+  quote: string[];
+}
+
 export interface EducationEntry {
   period: string;
   institution: string;

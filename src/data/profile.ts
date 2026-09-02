@@ -15,8 +15,9 @@ export const profile = {
 export const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Expertise", href: "#expertise" },
-  { label: "Open Source", href: "#open-source" },
   { label: "Selected work", href: "#references" },
+  { label: "Open Source", href: "#open-source" },
+  { label: "Recommendations", href: "#recommendations" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];

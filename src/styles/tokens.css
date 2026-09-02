@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --color-bg: #f1eee5;
   --color-surface: #f8f5ed;
   --color-ink: #171915;
@@ -8,12 +9,43 @@
   --color-accent: #d85b36;
   --color-dark: #1d1f1b;
   --color-dark-muted: #aaaca3;
+  --color-copy: #3e403a;
+  --color-grid: rgb(23 25 21 / 0.045);
+  --color-header-bg: rgb(241 238 229 / 0.9);
+  --color-header-border: rgb(185 183 173 / 0.8);
+  --color-soft-surface: rgb(248 245 237 / 0.48);
+  --color-card-surface: rgb(248 245 237 / 0.46);
+  --color-timeline-bg: rgb(248 245 237 / 0.68);
+  --color-shadow: rgb(23 25 21 / 0.06);
+  --color-contact-ink: #171915;
+  --color-contact-highlight: #f1eee5;
   --font-sans: "Manrope Variable", "Helvetica Neue", sans-serif;
   --font-serif: "Newsreader Variable", Georgia, serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   --shell: min(1280px, calc(100vw - 64px));
   --section-space: clamp(6rem, 11vw, 10.5rem);
   --radius: 2px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #141612;
+  --color-surface: #1c1f1a;
+  --color-ink: #f0eee5;
+  --color-muted: #aaada4;
+  --color-border: #42463e;
+  --color-border-dark: #4f554c;
+  --color-accent: #e16a45;
+  --color-dark: #0f110e;
+  --color-dark-muted: #afb2a9;
+  --color-copy: #d0d2c9;
+  --color-grid: rgb(255 255 255 / 0.035);
+  --color-header-bg: rgb(20 22 18 / 0.9);
+  --color-header-border: rgb(66 70 62 / 0.85);
+  --color-soft-surface: rgb(28 31 26 / 0.62);
+  --color-card-surface: rgb(28 31 26 / 0.82);
+  --color-timeline-bg: rgb(28 31 26 / 0.78);
+  --color-shadow: rgb(0 0 0 / 0.25);
 }
 
 @media (max-width: 640px) {

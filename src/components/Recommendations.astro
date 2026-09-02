@@ -1,0 +1,53 @@
+---
+import { recommendations, recommendationsUrl } from "../data/recommendations";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section section--recommendations" aria-labelledby="recommendations-title">
+  <div class="shell">
+    <SectionHeader id="recommendations" number="05" title="Recommendations" />
+    <div class="section-lead">
+      <h2 id="recommendations-title" class="recommendations-heading">
+        What collaborators <em>say.</em>
+      </h2>
+      <p class="section-intro">
+        Feedback from people who worked with me on complex data platforms and client engagements.
+      </p>
+    </div>
+
+    <div class="recommendations-grid">
+      {
+        recommendations.map((recommendation, index) => (
+          <article class="recommendation-card">
+            <header class="recommendation-card__topline">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span>LinkedIn · {recommendation.date}</span>
+            </header>
+            <blockquote>
+              {recommendation.quote.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </blockquote>
+            <footer>
+              <a href={recommendation.profileUrl} target="_blank" rel="noopener noreferrer">
+                {recommendation.name} <span aria-hidden="true">↗</span>
+                <span class="sr-only"> (opens LinkedIn in a new tab)</span>
+              </a>
+              <p>{recommendation.role}</p>
+            </footer>
+          </article>
+        ))
+      }
+    </div>
+
+    <a
+      class="recommendations-link"
+      href={recommendationsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View all recommendations on LinkedIn <span aria-hidden="true">↗</span>
+      <span class="sr-only"> (opens in a new tab)</span>
+    </a>
+  </div>
+</section>

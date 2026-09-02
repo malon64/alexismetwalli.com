@@ -1,4 +1,5 @@
 ---
+import { Moon, Sun } from "@lucide/astro";
 import { navLinks, profile } from "../data/profile";
 ---
 
@@ -9,25 +10,60 @@ import { navLinks, profile } from "../data/profile";
       <span>{profile.name}</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
-      {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
-    </nav>
-
-    <details class="mobile-nav">
-      <summary aria-label="Open navigation">
-        <span>Menu</span>
-        <span class="mobile-nav__icon" aria-hidden="true"></span>
-      </summary>
-      <nav aria-label="Mobile navigation">
-        {
-          navLinks.map((link, index) => (
-            <a href={link.href}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {link.label}
-            </a>
-          ))
-        }
+    <div class="site-header__actions">
+      <nav class="desktop-nav" aria-label="Main navigation">
+        {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
       </nav>
-    </details>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <Moon class="theme-toggle__moon" aria-hidden="true" />
+        <Sun class="theme-toggle__sun" aria-hidden="true" />
+      </button>
+
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation">
+          <span>Menu</span>
+          <span class="mobile-nav__icon" aria-hidden="true"></span>
+        </summary>
+        <nav aria-label="Mobile navigation">
+          {
+            navLinks.map((link, index) => (
+              <a href={link.href}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {link.label}
+              </a>
+            ))
+          }
+        </nav>
+      </details>
+    </div>
   </div>
 </header>
+
+<script>
+  const themeToggle = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
+  const themeMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+
+  const updateThemeControl = () => {
+    const isDark = document.documentElement.dataset.theme === "dark";
+    const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+    themeToggle?.setAttribute("aria-label", label);
+    themeToggle?.setAttribute("title", label);
+    themeToggle?.setAttribute("aria-pressed", String(isDark));
+    themeMeta?.setAttribute("content", isDark ? "#141612" : "#f1eee5");
+  };
+
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nextTheme;
+
+    try {
+      localStorage.setItem("alexis-theme", nextTheme);
+    } catch {}
+
+    updateThemeControl();
+  });
+
+  updateThemeControl();
+</script>

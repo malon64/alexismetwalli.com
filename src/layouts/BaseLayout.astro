@@ -31,6 +31,21 @@ const personSchema = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#f1eee5" />
+    <script is:inline>
+      (() => {
+        const hour = new Date().getHours();
+        let theme = hour >= 19 || hour < 7 ? "dark" : "light";
+
+        try {
+          theme = localStorage.getItem("alexis-theme") || theme;
+        } catch {}
+
+        document.documentElement.dataset.theme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute("content", theme === "dark" ? "#141612" : "#f1eee5");
+      })();
+    </script>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

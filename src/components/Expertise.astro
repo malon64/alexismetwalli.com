@@ -3,42 +3,44 @@ import { expertise } from "../data/expertise";
 import SectionHeader from "./SectionHeader.astro";
 ---
 
-<section class="section shell" aria-labelledby="expertise-title">
-  <SectionHeader
-    id="expertise"
-    number="02"
-    title="Expertise"
-    intro="What I can take ownership of, and how I deliver it."
-  />
-  <h2 id="expertise-title" class="sr-only">Expertise</h2>
+<section class="section section--expertise" aria-labelledby="expertise-title">
+  <div class="shell">
+    <SectionHeader
+      id="expertise"
+      number="02"
+      title="Expertise"
+      intro="What I can take ownership of, and how I deliver it."
+    />
+    <h2 id="expertise-title" class="sr-only">Expertise</h2>
 
-  <div class="expertise-list">
-    {
-      expertise.map((area) => (
-        <article class="expertise-row">
-          <header>
-            <span class="card-index">{area.index}</span>
-            <h3>{area.title}</h3>
-            <p>{area.description}</p>
-          </header>
-          <div class="expertise-row__capabilities">
-            <h4>What I can do</h4>
-            <ul>
-              {area.capabilities.map((capability) => (
-                <li>{capability}</li>
-              ))}
-            </ul>
-          </div>
-          <div class="expertise-row__methods">
-            <h4>How I deliver it</h4>
-            <ul aria-label={area.title + " technologies and methods"}>
-              {area.methods.map((method) => (
-                <li>{method}</li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      ))
-    }
+    <div class="expertise-list">
+      {
+        expertise.map((area) => (
+          <article class="expertise-row">
+            <header>
+              <span class="card-index">{area.index}</span>
+              <h3>{area.title}</h3>
+              <p>{area.description}</p>
+            </header>
+            <div class="expertise-row__capabilities">
+              <h4>What I can do</h4>
+              <ul>
+                {area.capabilities.map((capability) => (
+                  <li>{capability}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="expertise-row__methods">
+              <h4>How I deliver it</h4>
+              <ul aria-label={area.title + " technologies and methods"}>
+                {area.methods.map((method) => (
+                  <li>{method}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>

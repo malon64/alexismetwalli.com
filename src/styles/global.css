@@ -16,8 +16,8 @@ body {
   margin: 0;
   background-color: var(--color-bg);
   background-image:
-    linear-gradient(to right, rgb(23 25 21 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(23 25 21 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
   background-size: 40px 40px;
   color: var(--color-ink);
   font-family: var(--font-sans);
@@ -94,7 +94,7 @@ ol {
   padding: 0.7rem 1rem;
   transform: translateY(-150%);
   background: var(--color-ink);
-  color: #fff;
+  color: var(--color-bg);
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }
@@ -107,8 +107,8 @@ ol {
   position: sticky;
   z-index: 100;
   top: 0;
-  background: rgb(241 238 229 / 0.9);
-  border-bottom: 1px solid rgb(185 183 173 / 0.8);
+  background: var(--color-header-bg);
+  border-bottom: 1px solid var(--color-header-border);
   backdrop-filter: blur(12px);
 }
 
@@ -140,6 +140,12 @@ ol {
   letter-spacing: -0.04em;
 }
 
+.site-header__actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .desktop-nav {
   display: flex;
   gap: clamp(1rem, 2vw, 2rem);
@@ -167,6 +173,42 @@ ol {
 .desktop-nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.theme-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.6;
+}
+
+.theme-toggle__sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__sun {
+  display: block;
 }
 
 .mobile-nav {
@@ -299,7 +341,7 @@ ol {
   position: relative;
   margin: 0;
   border: 1px solid var(--color-border);
-  box-shadow: 12px 12px 0 rgb(23 25 21 / 0.06);
+  box-shadow: 12px 12px 0 var(--color-shadow);
   background: var(--color-surface);
 }
 
@@ -361,7 +403,7 @@ ol {
   display: grid;
   gap: 1.5rem;
   padding-top: 0.5rem;
-  color: #3e403a;
+  color: var(--color-copy);
   font-size: clamp(1.05rem, 1.45vw, 1.26rem);
   line-height: 1.7;
 }
@@ -371,7 +413,7 @@ ol {
   grid-template-columns: repeat(4, 1fr);
   margin-top: clamp(4rem, 8vw, 7rem);
   border: 1px solid var(--color-border);
-  background: rgb(248 245 237 / 0.48);
+  background: var(--color-soft-surface);
 }
 
 .delivery-chain li {
@@ -479,7 +521,7 @@ ol {
 .expertise-row__capabilities li {
   position: relative;
   padding-left: 1rem;
-  color: #45473f;
+  color: var(--color-copy);
   font-size: 0.78rem;
   line-height: 1.5;
 }
@@ -686,7 +728,7 @@ ol {
 
 .case-study {
   border: 1px solid var(--color-border);
-  background: rgb(248 245 237 / 0.46);
+  background: var(--color-card-surface);
 }
 
 .case-study__header {
@@ -729,7 +771,7 @@ ol {
 .case-study__details li {
   position: relative;
   padding-left: 1rem;
-  color: #45473f;
+  color: var(--color-copy);
   font-size: 0.78rem;
   line-height: 1.5;
 }
@@ -786,8 +828,97 @@ ol {
   border-top: 1px solid var(--color-border);
 }
 
+.recommendations-heading {
+  max-width: 12ch;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.recommendation-card {
+  display: flex;
+  min-height: 620px;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3.5vw, 3.5rem);
+  background: var(--color-card-surface);
+}
+
+.recommendation-card__topline {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.recommendation-card blockquote {
+  display: grid;
+  gap: 1rem;
+  margin: 3rem 0 0;
+  color: var(--color-copy);
+  font-size: clamp(0.9rem, 1.15vw, 1.02rem);
+  line-height: 1.7;
+}
+
+.recommendation-card blockquote p:first-child::before {
+  color: var(--color-accent);
+  content: "“";
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 0;
+}
+
+.recommendation-card blockquote p:last-child::after {
+  color: var(--color-accent);
+  content: "”";
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 0;
+}
+
+.recommendation-card footer {
+  margin-top: auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.recommendation-card footer a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.recommendation-card footer p {
+  margin-top: 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.recommendations-link {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  width: fit-content;
+  margin-top: 2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
 .section--timeline {
-  background: rgb(248 245 237 / 0.68);
+  background: var(--color-timeline-bg);
   border-block: 1px solid var(--color-border);
 }
 
@@ -927,7 +1058,7 @@ ol {
 
 .section--contact {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-contact-ink);
 }
 
 .section--contact .section-header {
@@ -954,7 +1085,7 @@ ol {
 }
 
 .contact-layout h2 em {
-  color: var(--color-bg);
+  color: var(--color-contact-highlight);
 }
 
 .contact-email {
@@ -962,7 +1093,7 @@ ol {
   gap: 2rem;
   justify-content: space-between;
   padding-bottom: 0.8rem;
-  border-bottom: 2px solid var(--color-ink);
+  border-bottom: 2px solid var(--color-contact-ink);
   font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 650;
 }
@@ -1146,6 +1277,18 @@ ol {
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-card {
+    min-height: auto;
+  }
+
+  .recommendation-card footer {
+    margin-top: 3rem;
   }
 
   .expertise-row {
