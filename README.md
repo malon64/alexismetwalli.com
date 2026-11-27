@@ -42,7 +42,15 @@ To inspect the production build locally:
     ├── pages/       Static routes
     └── styles/      Design tokens, typography, and global styles
 
-## Deployment status
+## Deployment
 
-Deployment infrastructure is intentionally not included in v1. Any static host can serve the
-generated dist directory.
+The site is served by Cloudflare Workers as static assets (see wrangler.jsonc; no Worker script).
+Cloudflare Workers Builds is connected to this GitHub repository and deploys every push to main:
+
+- Build command: npm run build
+- Deploy command: npx wrangler deploy
+
+Pull requests get preview builds. To deploy manually from a machine logged in with
+`npx wrangler login`:
+
+    npm run deploy

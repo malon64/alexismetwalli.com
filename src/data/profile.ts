@@ -2,13 +2,13 @@ import type { NavLink, SocialLink } from "./types";
 
 export const profile = {
   name: "Alexis Metwalli",
-  title: "Data Platform Engineer",
+  title: "Freelance Data Platform Engineer",
   description:
-    "Data Platform Engineer in Paris. Databricks, Apache Spark, AWS, Azure, Terraform, and lakehouse architectures.",
+    "Freelance Data Platform Engineer in Paris. Databricks, Apache Spark, AWS, Azure, Terraform, and lakehouse architectures.",
   location: "Paris · Remote",
   contactEmail: "contact@alexismetwalli.com",
   intro:
-    "I help data teams assess, modernize, and industrialize their data platforms—from business requirements to production infrastructure.",
+    "As a freelancer, I help data teams assess, modernize, and industrialize their data platforms—from business requirements to production infrastructure.",
   technologies: ["Databricks", "Apache Spark", "dbt", "AWS / Azure", "Terraform"],
 } as const;
 

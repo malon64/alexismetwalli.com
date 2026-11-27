@@ -23,8 +23,9 @@ const { project, index } = Astro.props;
   <ul class="project-card__stack" aria-label={project.name + " technologies"}>
     {project.stack.map((item) => <li>{item}</li>)}
   </ul>
-  <a href={project.github} target="_blank" rel="noopener noreferrer">
-    View on GitHub <span aria-hidden="true">→</span>
+  <a href={project.url} target="_blank" rel="noopener noreferrer">
+    {project.linkLabel}
+    <span aria-hidden="true">→</span>
     <span class="sr-only"> (opens in a new tab)</span>
   </a>
 </article>

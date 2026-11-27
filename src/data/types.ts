@@ -20,7 +20,8 @@ export interface Project {
   name: string;
   label: string;
   description: string;
-  github: string;
+  url: string;
+  linkLabel: string;
   stack: string[];
   command: string;
   highlights: string[];

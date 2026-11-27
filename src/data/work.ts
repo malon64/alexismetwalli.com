@@ -2,6 +2,24 @@ import type { CaseStudy } from "./types";
 
 export const selectedWork: CaseStudy[] = [
   {
+    client: "Redion (formerly Europ Assistance)",
+    context: "AWS ingestion platform · freelance mission",
+    summary:
+      "Building and operating standardized AWS ingestion workflows for business domains of 200–300 tables each, combining production support with new development.",
+    details: [
+      "Built ingestion workflows with Glue, DMS, S3, Step Functions, Lambda, and Redshift",
+      "Migrated legacy pipelines to standardized, reusable ingestion patterns",
+      "Redesigned Glue job triggers to cut selected pipeline runtimes and compute requirements",
+      "Combined day-to-day production support with new platform development",
+    ],
+    stack: ["AWS Glue", "DMS", "Redshift", "Step Functions", "Lambda", "S3"],
+    proofs: [
+      { value: "4 h → 1 h", label: "Selected pipeline runtimes", featured: true },
+      { value: "200–300", label: "Tables per business domain" },
+      { value: "−75%", label: "Runtime through Glue trigger redesign" },
+    ],
+  },
+  {
     client: "Sonepar",
     context: "Azure Databricks · enterprise data platform",
     summary:

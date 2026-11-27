@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "alexismetwalli-com",
+  "compatibility_date": "2026-11-27",
+  // Static site: no Worker script, Cloudflare serves the Astro build output directly.
+  "assets": {
+    "directory": "./dist",
+  },
+}

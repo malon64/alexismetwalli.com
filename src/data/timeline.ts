@@ -2,7 +2,16 @@ import type { EducationEntry, TimelineEntry } from "./types";
 
 export const timeline: TimelineEntry[] = [
   {
-    period: "Aug 2026",
+    period: "Sep 2026 – Present",
+    organization: "Freelance",
+    organizationLabel: "Independent",
+    role: "Data Platform Engineer",
+    mission: "Redion (formerly Europ Assistance)",
+    summary:
+      "Built and operated AWS ingestion workflows across domains of 200–300 tables, cutting selected pipeline runtimes by 75%.",
+  },
+  {
+    period: "Jul 2026",
     organization: "Onepoint",
     role: "Data Platform Engineer",
     mission: "Arkose",

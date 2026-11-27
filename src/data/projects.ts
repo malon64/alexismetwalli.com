@@ -6,7 +6,8 @@ export const projects: Project[] = [
     label: "Lakehouse platform",
     description:
       "An open-source lakehouse platform for small data teams: self-hosted, modular, and deployable locally, on AWS, or on Azure.",
-    github: "https://github.com/malon64/openlakeforge",
+    url: "https://openlakeforge.dev",
+    linkLabel: "Visit openlakeforge.dev",
     stack: ["Iceberg", "Trino", "dbt", "Dagster", "Terraform", "Helm"],
     command: "olf deploy --provider local",
     highlights: [
@@ -20,7 +21,8 @@ export const projects: Project[] = [
     label: "Data contract runtime",
     description:
       "A Rust and Polars-powered data contract runtime that validates data before it enters the trusted layer.",
-    github: "https://github.com/malon64/floe",
+    url: "https://github.com/OpenLakeForge/floe",
+    linkLabel: "View on GitHub",
     stack: ["Rust", "Polars", "Arrow", "Data Contracts"],
     command: "floe run -c config.yml",
     highlights: [
