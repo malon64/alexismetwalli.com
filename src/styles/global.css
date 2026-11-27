@@ -623,7 +623,7 @@ html[data-theme="dark"] .theme-toggle__sun {
 .project-card__highlights {
   display: grid;
   gap: 0.8rem;
-  margin-top: 2rem;
+  margin: 2rem 0 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border-dark);
 }

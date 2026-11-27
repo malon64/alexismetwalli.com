@@ -6,7 +6,7 @@ export const timeline: TimelineEntry[] = [
     organization: "Freelance",
     organizationLabel: "Independent",
     role: "Data Platform Engineer",
-    mission: "Redion (formerly Europ Assistance)",
+    mission: "Redion",
     summary:
       "Built and operated AWS ingestion workflows across domains of 200–300 tables, cutting selected pipeline runtimes by 75%.",
   },

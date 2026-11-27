@@ -2,7 +2,7 @@ import type { CaseStudy } from "./types";
 
 export const selectedWork: CaseStudy[] = [
   {
-    client: "Redion (formerly Europ Assistance)",
+    client: "Redion",
     context: "AWS ingestion platform · freelance mission",
     summary:
       "Building and operating standardized AWS ingestion workflows for business domains of 200–300 tables each, combining production support with new development.",
